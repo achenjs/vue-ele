@@ -44,13 +44,7 @@
           <div class="star-wrapper">
             <star :size="48" :score="seller.score"></star>
           </div>
-          <div class="title">
-            <div class="line"></div>
-            <div class="text">
-              优惠信息
-            </div>
-            <div class="line"></div>
-          </div>
+          <covertitle></covertitle>
           <ul class="supports" v-if="seller.supports">
             <li class="support-item"
               v-for="(item, index) of seller.supports">
@@ -58,13 +52,7 @@
                 <span class="text">{{seller.supports[index].description}}</span>
             </li>
           </ul>
-          <div class="title">
-            <div class="line"></div>
-            <div class="text">
-              商家公告
-            </div>
-            <div class="line"></div>
-          </div>
+          <covertitle></covertitle>
           <div class="bulletin">
             <p class="content">{{seller.bulletin}}</p>
           </div>
@@ -80,6 +68,7 @@
 
 <script>
 import star from 'components/star/star'
+import covertitle from './coverTitle/coverTitle'
 
 export default {
   data () {
@@ -103,7 +92,7 @@ export default {
       this.detailShow = false
     }
   },
-  components: { star }
+  components: { star, covertitle }
 }
 </script>
 
@@ -136,7 +125,7 @@ export default {
           vertical-align: middle;
           width: 30px;
           height: 18px;
-          @include bg-image('brand');
+          @include bg-image('./images/brand');
           background-size: 30px 18px;
           background-repeat: no-repeat;
         }
@@ -162,19 +151,19 @@ export default {
           background-size: 12px 12px;
           background-repeat: no-repeat;
           &.decrease {
-            @include bg-image('decrease_1');
+            @include bg-image('./images/decrease_1');
           }
           &.discount {
-            @include bg-image('discount_1');
+            @include bg-image('./images/discount_1');
           }
           &.guarantee {
-            @include bg-image('guarantee_1');
+            @include bg-image('./images/guarantee_1');
           }
           &.invoice {
-            @include bg-image('invoice_1');
+            @include bg-image('./images/invoice_1');
           }
           &.special {
-            @include bg-image('special_1');
+            @include bg-image('./images/special_1');
           }
         }
         .text {
@@ -219,7 +208,7 @@ export default {
       margin-top: 8px;
       width: 22px;
       height: 12px;
-      @include bg-image('bulletin');
+      @include bg-image('./images/bulletin');
       background-size: 22px 12px;
       background-repeat: no-repeat;
     }
@@ -279,22 +268,6 @@ export default {
           padding: 2px 0;
           text-align: center;
         }
-        .title {
-          display: flex;
-          width: 80%;
-          margin: 28px auto 24px auto;
-          .line {
-            flex: 1;
-            position: relative;
-            top: -6px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-          }
-          .text {
-            padding: 0 12px;
-            font-size: 14px;
-            font-weight: 700;
-          }
-        }
         .supports {
           width: 80%;
           margin: 0 auto;
@@ -314,19 +287,19 @@ export default {
               background-size: 16px 16px;
               background-repeat: no-repeat;
               &.decrease {
-                @include bg-image('decrease_1');
+                @include bg-image('./images/decrease_1');
               }
               &.discount {
-                @include bg-image('discount_1');
+                @include bg-image('./images/discount_1');
               }
               &.guarantee {
-                @include bg-image('guarantee_1');
+                @include bg-image('./images/guarantee_1');
               }
               &.invoice {
-                @include bg-image('invoice_1');
+                @include bg-image('./images/invoice_1');
               }
               &.special {
-                @include bg-image('special_1');
+                @include bg-image('./images/special_1');
               }
             }
             .text {

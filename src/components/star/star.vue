@@ -64,13 +64,13 @@ export default {
         margin-right: 0;
       }
       &.on {
-        @include bg-image('star48_on');
+        @include bg-image('./images/star48_on');
       }
       &.half {
-        @include bg-image('star48_half');
+        @include bg-image('./images/star48_half');
       }
       &.off {
-        @include bg-image('star48_off');
+        @include bg-image('./images/star48_off');
       }
     }
   }
@@ -84,13 +84,13 @@ export default {
         margin-right: 0;
       }
       &.on {
-        @include bg-image('star36_on');
+        @include bg-image('./images/star36_on');
       }
       &.half {
-        @include bg-image('star36_half');
+        @include bg-image('./images/star36_half');
       }
       &.off {
-        @include bg-image('star36_off');
+        @include bg-image('./images/star36_off');
       }
     }
   }
@@ -104,13 +104,13 @@ export default {
         margin-right: 0;
       }
       &.on {
-        @include bg-image('star24_on');
+        @include bg-image('./images/star24_on');
       }
       &.half {
-        @include bg-image('star24_half');
+        @include bg-image('./images/star24_half');
       }
       &.off {
-        @include bg-image('star24_off');
+        @include bg-image('./images/star24_off');
       }
     }
   }
