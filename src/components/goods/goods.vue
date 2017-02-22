@@ -35,6 +35,9 @@
                     <span class="now"><i>￥</i>{{food.price}}</span><span class="old"
                       v-show="food.oldPrice"><i>￥</i>{{food.oldPrice}}</span>
                   </div>
+                  <div class="cartcontrol-wrapper">
+                    <cartcontrol :food="food"></cartcontrol>
+                  </div>
                 </div>
               </li>
             </ul>
@@ -50,6 +53,7 @@
 import axios from 'axios'
 import BScroll from 'better-scroll'
 import shopcart from 'components/shopcart/shopcart'
+import cartcontrol from 'components/cartcontrol/cartcontrol'
 const ERR_OK = 0
 
 export default {
@@ -105,6 +109,7 @@ export default {
       })
       this.foodsScroll = new BScroll(this.$refs.foodsWrapper, {
         bounce: false,
+        click: true,
         probeType: 3
       })
       this.foodsScroll.on('scroll', (pos) => {
@@ -132,7 +137,7 @@ export default {
       }     
     },
   },
-  components: { shopcart }
+  components: { shopcart, cartcontrol }
 }
 </script>
 
