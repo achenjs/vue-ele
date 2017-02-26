@@ -7,7 +7,6 @@ import ratings from 'components/ratings/ratings'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
   linkActiveClass: 'active',
   routes: [
     {

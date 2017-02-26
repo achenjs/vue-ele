@@ -23,14 +23,35 @@
                 </div>
             </div>
         </div>
+        <!--购物车详情-->
+        <div class="shopcart-list" v-show="listShow">
+            <div class="list-header">
+                <h1 class="title">购物车</h1>
+                <span class="empty">清空</span>
+            </div>
+            <div class="list-content">
+                <ul>
+                    <li class="food" v-for="food in selectFoods">
+                        <span class="name">{{food.name}}</span>
+                        <div class="price">
+                            <span>￥{{food.price * food.count}}</span>
+                        </div>
+                        <div class="cartcontrol-wrapper">
+                            <cartcontrol></cartcontrol>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div><!--购物车详情结束-->
     </div>
 </template>
 
 <script>
+import cartcontrol from 'components/cartcontrol/cartcontrol';
 export default {
     data () {
         return {
-            
+            fold: true,
         }
     },
     props: {
@@ -82,9 +103,19 @@ export default {
             } else {
                 return 'enough'
             }
+        },
+        listShow() {
+            if (!this.totalCount) {
+                this.fold = true
+                return false;
+            }
+            let show = !this.show
+            return show
         }
     },
-    components: {}
+    components: {
+        cartcontrol
+    }
 }
 </script>
 
